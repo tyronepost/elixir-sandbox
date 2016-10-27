@@ -6,6 +6,10 @@ defmodule MyList do
     reduce(tail, func.(head, value), func)
   end
 
+  def mapsum(list, func) do
+    sum(map(list, func))
+  end
+  
   def len([]), do: 0
   def len([_head | tail]), do: 1 + len(tail) 
 
