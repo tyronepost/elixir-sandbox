@@ -1,4 +1,18 @@
 defmodule MyList do
+
+  def max(list) do
+    _max(list, 0)
+  end
+  defp _max([head | tail], max) when head < max do
+    _max(tail, max)
+  end
+  defp _max([head | tail], max) when head > max do
+    _max(tail, head)
+  end
+  defp _max([], max) do
+    max
+  end
+  
   def reduce([], value, _) do
     value
   end
